@@ -13,6 +13,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -23,10 +24,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends Activity implements OnClickListener{
 
 	private Button button;
+	private ImageView image;
 	private int PHOTO_GALLERY = 1;
 	private String path;
 	@Override
@@ -34,6 +37,8 @@ public class MainActivity extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		button = (Button) findViewById(R.id.yasuo);
+		image = (ImageView) findViewById(R.id.image);
+		image.setImageURI(Uri.parse("http://img.my.csdn.net/uploads/201309/01/1378037235_7476.jpg"));
 		button.setOnClickListener(this);
 	}
 
